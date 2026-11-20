@@ -1,17 +1,61 @@
 # Sorting and Searching Visualizer
 
-Java 17 / JavaFX 桌面课程项目，支持六种排序算法与二叉搜索树查找动画。
+A JavaFX desktop application for exploring sorting algorithms and binary search tree traversal through step-by-step animation. Developed as a team coursework project.
 
-## 运行
-安装 JDK 17 和 Maven 3.9，在项目根目录执行 `mvn clean compile`，再执行 `mvn javafx:run`。首次构建需要联网下载依赖。无需本机 JavaFX SDK 绝对路径。
+## Features
 
-选择算法，输入逗号或空格分隔的整数，再点 Play。支持负数、重复值和 32 位整数；最多 50 个元素。BSTSearch 需要有效整数目标。重新播放会停止上一段动画。
+- Bubble, insertion, selection, merge, quick, and heap sort.
+- Binary search tree search with a user-specified target.
+- Array input, algorithm selection, and animated comparisons.
+- Support for negative numbers, duplicate values, and 32-bit integers.
+- Input validation and a 50-element limit.
+- Starting a new animation stops the previous playback.
 
-## 本人分工
-肖雅薇负责 JavaFX 界面开发、排序模块集成与代码合并。算法与其他模块属于团队成果。
+## My contribution
 
-## 结构与限制
-`src/main/java/ui`：界面与动画控制；`algorithms`：排序步骤；`datastructures`：树结构。排序柱高按数值范围缩放。树布局采用固定画布，较深的树可能超出视野；尚未进行完整桌面交互回归。
+Yawei Xiao (GitHub: [YARA-111111](https://github.com/YARA-111111)) worked on the JavaFX interface, sorting-module integration, and code merging. The algorithms and other components are team contributions.
 
-## 验证
-`javac -cp target/classes -d target/test-classes tests/SmokeTest.java` 后执行 `java -cp "target/classes;target/test-classes" SmokeTest`（macOS/Linux 将分号改为冒号）。
+## Requirements and setup
+
+- JDK 17
+- Maven 3.9
+- A graphical desktop environment
+
+From the repository root:
+
+```shell
+mvn clean compile
+mvn javafx:run
+```
+
+Maven downloads JavaFX dependencies on the first build. No machine-specific JavaFX SDK path is needed.
+
+Choose an algorithm, enter integers separated by commas or spaces, and click **Play**. For **BSTSearch**, also enter an integer search target.
+
+## Project structure
+
+| Directory | Purpose |
+| --- | --- |
+| `src/main/java/ui` | Interface, rendering, and animation control |
+| `src/main/java/algorithms` | Sorting implementations and recorded steps |
+| `src/main/java/datastructures` | Binary search tree structures and traversal |
+| `tests` | Input-validation and sorting smoke tests |
+
+## Tests
+
+After compiling, run:
+
+```shell
+javac -cp target/classes -d target/test-classes tests/SmokeTest.java
+java -cp "target/classes;target/test-classes" SmokeTest
+```
+
+On macOS/Linux, replace the classpath semicolon with a colon.
+
+Compilation and smoke tests for all six sorting algorithms have passed. Full desktop interaction testing has not been completed.
+
+## Limitations and attribution
+
+Sorting bars scale to the input range. Tree rendering uses a fixed canvas, so deep trees may extend beyond the visible area.
+
+See [CONTRIBUTORS.md](CONTRIBUTORS.md) for attribution. An open-source license has not yet been selected by the team.
